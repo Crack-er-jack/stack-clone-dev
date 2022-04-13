@@ -56,7 +56,7 @@ function App() {
           {/*<PrivateRoute exact path="/" component={StackOverflow} />*/}
           <PrivateRoute exact path="/add-question" component={Question} />
           <PrivateRoute exact path="/question" component={ViewQuestion} />
-          <Route exact path={"/"} component={Auth} />
+          <Route exact path={user? "/" : "/auth"} component={user? StackOverflow : Auth} />
         </Switch>
       </Router>
     </div>
